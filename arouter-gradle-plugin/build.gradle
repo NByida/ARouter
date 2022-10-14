@@ -1,12 +1,27 @@
 apply plugin: 'groovy'
 
 dependencies {
-    compile gradleApi()
-    compile localGroovy()
+    implementation gradleApi()
+    implementation localGroovy()
 }
 
 dependencies {
-    compile 'com.android.tools.build:gradle:2.1.3'
+    implementation 'com.android.tools.build:gradle:3.2.0'
 }
+
+
+
+//uploadArchives {
+//    repositories.mavenDeployer {
+//        repository(url: "http://192.168.31.241:8082/artifactory/meme_maven/") {
+//            authentication(userName: "admin", password: "123kaibola")
+//        }
+//        pom.project {
+//            groupId "arouter"
+//            artifactId "plugin"
+//            version  "1.0.2"
+//        }
+//    }
+//}
 
 apply from: rootProject.file('gradle/publish.gradle')
