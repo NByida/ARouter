@@ -5,6 +5,10 @@ buildscript {
     repositories {
         mavenCentral()
         google()
+        //添加此本地maven
+        maven {
+            url = "${rootProject.getPath()}/../localMaven"
+        }
     }
 
     dependencies {
@@ -12,7 +16,10 @@ buildscript {
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "com.alibaba:arouter-register:$arouter_register_version"
+
+        //替换原先的远程依赖，改成以下（arouter-register-asm7）的依赖
+//        classpath "com.alibaba:arouter-register:$arouter_register_version"
+        classpath 'com.alibaba:arouter-register-asm7:1.0.2'
     }
 }
 
@@ -21,5 +28,8 @@ allprojects {
         mavenLocal()
         mavenCentral()
         google()
+        maven {
+            url = "${rootProject.getPath()}/../localMaven"
+        }
     }
 }
