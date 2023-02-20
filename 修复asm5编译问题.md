@@ -33,12 +33,12 @@ NextHost requires ASM7.
 
 使用步骤：
 
-- 1 复制/localMaven目录下面的文件到 根目录下面
+- 1 把项目中的 "归档.zip" 解压 复制到 根目录下面
 - 2 在项目的build.gradle添加本地仓库地址
 
 ```
    maven {
-            url = "${rootProject.getPath()}/../localMaven"
+            url = "${rootProject.getPath()}/../（1中解压的localMaven路径）"
         }
 
     dependencies {
